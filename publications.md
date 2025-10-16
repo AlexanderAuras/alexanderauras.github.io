@@ -3,7 +3,7 @@ layout: standard
 title: Publications
 ---
 
-<link rel="stylesheet" href="{{ "publications.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "assets/publications.css" | relative_url }}">
 <h1>Publications</h1>
 
 {% assign all_years = site.publications | map: "year" %}

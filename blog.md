@@ -3,7 +3,7 @@ layout: standard
 title: Blog
 ---
 
-<link rel="stylesheet" href="{{ "blog.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "assets/blog.css" | relative_url }}">
 <h1>Blog</h1>
 
 {% assign MONTH_NAMES = "???,Jan.,Feb.,Mar.,Apr.,May.,Jun.,Jul.,Aug.,Sep.,Oct.,Nov.,Dec." | split: "," %}
