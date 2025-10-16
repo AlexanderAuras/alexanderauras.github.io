@@ -24,5 +24,5 @@ title: CV
 ## Skills
 
 - **Natural Languages**: German (native), English (C2), Japanese (basic)
-- **Programming Languages**: Python (excellent), C/C++/CUDA/Java (intermediate), further knowledge of various other languages (bash, C#, JS, HTML, CSS, Dart, ...)
+- **Programming Languages**: Python (excellent), C/C++/CUDA/Java (intermediate), further knowledge of various other languages (bash, C#, JS/TypeScript, HTML, CSS/SASS, ...)
 - **Frameworks &amp; Tools**: PyTorch, OpenCV, SLURM, Git, Docker, CMake
