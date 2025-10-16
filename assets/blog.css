@@ -1,0 +1,43 @@
+h2 {
+  margin: 3em 0 0.25em 0;
+}
+
+.post-list {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  row-gap: 2em;
+}
+
+.post-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: center;
+  column-gap: 1.5em;
+}
+
+.post-title {
+  margin: 0 0 1ex 0;
+}
+
+.post-image {
+  width: 150px;
+  object-fit: contain;
+}
+
+.post-date {
+  font-size: 10pt;
+  font-style: italic;
+  margin: 0 0 1ex 0;
+}
+
+.post-desc * {
+  margin: 1ex 0;
+}
+
+/*# sourceMappingURL=blog.css.map */
