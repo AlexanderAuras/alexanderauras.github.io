@@ -1,24 +1,24 @@
-@import "sass:map";
+@use "sass:map";
 
-@import "functions";
+@use "functions" as *;
 
-@import "common";
-@import "light";
-@import "dark";
+@use "common" as *;
+@use "light";
+@use "dark";
 
-@import "misc";
+@use "misc";
 
-@import "header";
-@import "side-menu";
-@import "side-profile";
-@import "footer";
+@use "header";
+@use "side-menu";
+@use "side-profile";
+@use "footer";
 
 :root {
-  @include add-vars($light-theme);
+  @include add-vars(light.$theme);
 }
 
 [data-theme="dark"] {
-  @include add-vars($dark-theme);
+  @include add-vars(dark.$theme);
 }
 
 * {
