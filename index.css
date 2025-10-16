@@ -1,0 +1,15 @@
+.news-item {
+    margin-bottom: 0.5em;
+}
+
+.news-item:last-child {
+    margin-bottom: 0em;
+}
+
+.publication-item {
+    margin-bottom: 0.5em;
+}
+
+.publication-item:last-child {
+    margin-bottom: 0em;
+}

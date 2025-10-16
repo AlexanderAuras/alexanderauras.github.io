@@ -1,0 +1,21 @@
+<section id="side-profile" aria-label="Profile">
+  <img id="side-profile__author-image" src="{{ site.author-image | relative_url }}" />
+  <span id="side-profile__author-name">{{ site.author }}</span>
+  <span id="side-profile__author-desc">{{ site.author-desc }}</span>
+  <ul id="side-profile__links">
+    {% for link in site.author-links %}
+    <li class="side-profile__links-item">
+      {% if link.icon %}
+      <img class="side-profile__link-icon {% if link.invertible-icon %}invertible-icon{% endif %}" src="{{ link.icon | relative_url }}" />
+      {% else %}
+      <div class="side-profile__link-icon"></div>
+      {% endif %}
+      {% if link.url %}
+      <a href="{{ link.url }}" target="_blank">{{ link.label | replace: " ", "&nbsp;" }}</a>
+      {% else %}
+      {{ link.label | replace: " ", "&nbsp;" }}
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>

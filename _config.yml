@@ -1,4 +1,54 @@
 url: "https://alexanderauras.github.io/"
+author: Alexander Auras
+author-desc: "PhD-student in Computer Vision at the University of Siegen. Working on inverse problems, deep learning and neural architecture search."
+author-image: "/assets/author.png"
+author-links:
+  - label: University of Siegen | DE
+    icon: "assets/location.svg"
+    invertible-icon: true
+  - label: ORCID
+    url: https://orcid.org/0009-0006-8336-1873
+    icon: "assets/orcid.svg"
+  - label: Google&nbsp;Scholar
+    url: https://scholar.google.com/citations?user=VevDjJIAAAAJ
+    icon: "assets/scholar.svg"
+  - label: ResearchGate
+    url: https://www.researchgate.net/profile/Alexander-Auras"
+    icon: "assets/researchgate.svg"
+    invertible-icon: true
+  # - label: LinkedIn
+  #   url: https://www.linkedin.com/in/alexander-auras-3b0b0215b/
+  #   icon: "assets/linkedin.svg"
+  #   invertible-icon: true
+  - label: GitHub
+    url: https://github.com/AlexanderAuras/
+    icon: "assets/github.svg"
+    invertible-icon: true
+  - label: E-Mail
+    url: mailto:alexander.auras@uni-siegen.de
+    icon: "assets/email.svg"
+    invertible-icon: true
+nav-items:
+  - label: About Me
+    url: /
+    default: true
+  - label: Publications
+    url: /publications
+#  - label: Blog
+#    url: /blog
+  - label: CV
+    url: /cv
+
 plugins:
+#  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+collections:
+  publications:
+    output: false
+  news:
+    output: false
+  posts:
+    output: true
+    permalink: /blog/:title/

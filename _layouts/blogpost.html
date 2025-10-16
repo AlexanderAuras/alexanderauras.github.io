@@ -1,0 +1,13 @@
+---
+layout: no-profile
+---
+<h1>{{ page.title }}</h1>
+{% assign MONTH_NAMES = "???,Jan.,Feb.,Mar.,Apr.,May.,Jun.,Jul.,Aug.,Sep.,Oct.,Nov.,Dec." | split: "," %}
+{% for item in MONTH_NAMES %}
+  {% if forloop.index0 == page.month %}
+    {% assign month_name = item %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+<div style="font-style: italic;">{{ page.day }}. {{ month_name }} {{ page.year }}</div>
+{{ content }}

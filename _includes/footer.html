@@ -1,0 +1,10 @@
+<footer>
+  <div></div>
+  <div>&copy; <span id="footer__copyright-year">2025</span> {{ site.author | replace: " ", "&nbsp;"}}. Powered by <a href="https://jekyllrb.com/">Jekyll</a>.</div>
+  <div>{% include mode-toggle.html %}</div>
+  <script>
+    const footerCopyrightYear = document.getElementById("footer__copyright-year");
+    const currentYear = new Date().getFullYear();
+    footerCopyrightYear.textContent = currentYear;
+  </script>
+</footer>

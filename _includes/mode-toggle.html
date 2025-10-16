@@ -1,0 +1,77 @@
+<input type="checkbox" id="mode-toggle" class="mode-toggle" />
+<label for="mode-toggle" id="mode-toggle-label">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+    <rect id="mode-toggle-slider-bg" style="fill: rgb(217, 217, 217); stroke: rgb(128, 128, 128);  stroke-width: 5; transform-origin: 100px 50px 0px;" width="200" height="100" rx="50" ry="50"></rect>
+    <ellipse id="mode-toggle-slider-pin" style="fill: rgb(128, 128, 128); stroke: rgb(0, 0, 0); stroke-width: 0;" cx="50" cy="50" rx="50" ry="50"></ellipse>
+    <g id="mode-toggle-slider-sun" style="visibility: visible;">
+      <ellipse style="stroke: rgb(255, 249, 126); stroke-width: 0px; fill: rgb(255, 226, 99);" cx="50" cy="50" rx="30" ry="30" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, 0)"/>
+      <path d="M 46.121 8.708 Q 49.984 1.292 53.847 8.708 L 63.68 27.584 Q 67.543 35 59.817 35 L 40.151 35 Q 32.425 35 36.288 27.584 Z" bx:shape="triangle 32.425 1.292 35.118 33.708 0.5 0.22 1@3d5f9144" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 226, 99);" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, 0)"/>
+      <path d="M 45.251 39.161 Q 49.114 31.745 52.977 39.161 L 62.81 58.037 Q 66.673 65.453 58.947 65.453 L 39.281 65.453 Q 31.555 65.453 35.418 58.037 Z" bx:shape="triangle 31.555 31.745 35.118 33.708 0.5 0.22 1@6586fb75" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 226, 99); transform-origin: 49.114px 50.453px 0px;" transform="matrix(-0.5, 0.86602497, -0.86602497, -0.5, 28.36823022, 14.02324697)"/>
+      <path d="M 45.251 39.161 Q 49.114 31.745 52.977 39.161 L 62.81 58.037 Q 66.673 65.453 58.947 65.453 L 39.281 65.453 Q 31.555 65.453 35.418 58.037 Z" bx:shape="triangle 31.555 31.745 35.118 33.708 0.5 0.22 1@6586fb75" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 226, 99); transform-origin: 49.114px 50.453px 0px;" transform="matrix(-0.5, -0.86602497, 0.86602497, -0.5, -28.63178133, 14.02325917)"/>
+      <path d="M -53.843 -92.374 Q -49.98 -99.79 -46.117 -92.374 L -36.284 -73.498 Q -32.421 -66.082 -40.147 -66.082 L -59.813 -66.082 Q -67.539 -66.082 -63.676 -73.498 Z" bx:shape="triangle -67.539 -99.79 35.118 33.708 0.5 0.22 1@3a8c759a" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 226, 99); transform-origin: -49.98px -81.079px 0px;" transform="matrix(-1, 0, 0, -1, 99.95902575, 162.15770775)"/>
+      <path d="M 45.251 39.161 Q 49.114 31.745 52.977 39.161 L 62.81 58.037 Q 66.673 65.453 58.947 65.453 L 39.281 65.453 Q 31.555 65.453 35.418 58.037 Z" bx:shape="triangle 31.555 31.745 35.118 33.708 0.5 0.22 1@6586fb75" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 226, 99); transform-origin: 49.114px 50.453px 0px;" transform="matrix(0.5, -0.86602497, 0.86602497, 0.5, -26.63171835, -13.85010726)"/>
+      <path d="M 45.251 39.161 Q 49.114 31.745 52.977 39.161 L 62.81 58.037 Q 66.673 65.453 58.947 65.453 L 39.281 65.453 Q 31.555 65.453 35.418 58.037 Z" bx:shape="triangle 31.555 31.745 35.118 33.708 0.5 0.22 1@6586fb75" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 226, 99); transform-origin: 49.114px 50.453px 0px;" transform="matrix(0.5, 0.86602497, -0.86602497, 0.5, 30.36833099, -13.85011946)"/>
+    </g>
+    <g id="mode-toggle-slider-moon" style="visibility: hidden;">
+      <ellipse style="stroke-width: 0px; stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255);" cx="150" cy="50" rx="45" ry="45" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, 0)"/>
+      <ellipse style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(128, 128, 128);" cx="164.939" cy="50.158" rx="33.421" ry="38.35" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, 0)"/>
+    </g>
+  </svg>
+</label>
+<script>
+  document.addEventListener("DOMContentLoaded", () =>{
+    let theme = localStorage.getItem("theme");
+    if (theme === null) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        theme = "dark";
+      } else {
+        theme = "light";
+      }
+    }
+    document.documentElement.setAttribute("data-theme", theme);
+    document.getElementById("mode-toggle").checked = theme === "dark";
+  });
+  document.getElementById("mode-toggle").addEventListener("change", function() {
+    if (this.checked) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>
+<style>
+  #mode-toggle {
+    display: none;
+  }
+  #mode-toggle-label {
+    cursor: pointer;
+    width: 5ex;
+    height: auto;
+    display: inline-block;
+  }
+  #mode-toggle-slider-sun {
+    transition: visibility 0.3s step-end;
+  }
+  #mode-toggle-slider-moon {
+    transition: visibility 0.3s step-start;
+  }
+  #mode-toggle + #mode-toggle-label #mode-toggle-slider-pin {
+    transition: transform 0.3s ease-in-out;
+  }
+  #mode-toggle:checked + #mode-toggle-label #mode-toggle-slider-pin {
+    transform: translateX(100px) !important;
+  }
+  #mode-toggle:checked + #mode-toggle-label #mode-toggle-slider-bg {
+    fill: rgb(38, 38, 38) !important;
+  }
+  #mode-toggle:checked + #mode-toggle-label #mode-toggle-slider-sun {
+    transition: visibility 0.3s step-start;
+    visibility: hidden !important;
+  }
+  #mode-toggle:checked + #mode-toggle-label #mode-toggle-slider-moon {
+    transition: visibility 0.3s step-end;
+    visibility: visible !important;
+  }
+</style>

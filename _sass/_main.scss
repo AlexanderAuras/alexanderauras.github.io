@@ -1,0 +1,85 @@
+@use "sass:map";
+
+@use "functions" as *;
+
+@use "common" as *;
+@use "light";
+@use "dark";
+
+@use "misc";
+
+@use "header";
+@use "side-menu";
+@use "side-profile";
+@use "footer";
+
+:root {
+  @include add-vars(light.$theme);
+}
+
+[data-theme="dark"] {
+  @include add-vars(dark.$theme);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: $font-stack;
+  font-size: $font-size;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color-emph);
+  * {
+    color: var(--text-color-emph);
+  }
+}
+
+h1 {
+  font-size: $font-size-title;
+  * {
+    font-size: $font-size-title;
+  }
+}
+
+h2 {
+  font-size: $font-size-emph;
+  * {
+    font-size: $font-size-emph;
+  }
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+#content {
+  height: 100%;
+  padding: 1em $page-padding;
+  
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: stretch;
+  column-gap: 2em;
+}
+
+.nav-item * {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: $font-size-emph;
+  font-weight: bold;
+
+  &:hover {
+    color: var(--text-color-emph);
+  }
+}
+
+.nav-item--active {
+  text-decoration: underline;
+}

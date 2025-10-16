@@ -1,0 +1,9 @@
+<input type="checkbox" id="side-menu__checkbox">
+<label for="side-menu__checkbox" id="side-menu__overlay-hamburger" aria-hidden="true"></label>
+<nav id="side-menu">
+  <ul>
+    {% for entry in site.nav-items %}
+    <li class="nav-item {% if page.title == entry.label or (entry.default and page.title == null) %}nav-item--active{% endif %}"><a href="{{ entry.url }}">{{ entry.label | replace: " ", "&nbsp;" }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>

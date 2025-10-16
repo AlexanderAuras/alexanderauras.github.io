@@ -1,0 +1,5 @@
+@mixin add-vars($theme-map) {
+  @each $name, $value in $theme-map {
+    --#{$name}: #{$value};
+  }
+}

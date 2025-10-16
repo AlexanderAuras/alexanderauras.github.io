@@ -1,0 +1,66 @@
+@use "common" as *;
+
+
+#side-profile {
+  position: sticky;
+  top: $header-height;
+  flex: 0 0 $side-profile-width;
+  padding-top: 1em;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+
+  #side-profile__author-image {
+    width: calc(0.9 * $side-profile-image-width);
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+  }
+
+  #side-profile__author-name {
+    font-size: $font-size-emph;
+    font-weight: bold;
+    color: var(--text-color-emph);
+    text-align: center;
+  }
+
+  #side-profile__author-desc {
+    font-size: $font-size-deemph;
+    text-align: center;
+  }
+
+  #side-profile__links {
+    display: flex;
+    flex-flow: column nowrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    row-gap: 1ex;
+
+    font-size: $font-size-deemph;
+  }
+
+  .side-profile__links-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    column-gap: 1ex;
+
+    a:hover {
+      color: var(--text-color-emph);
+    }
+  }
+
+  .side-profile__link-icon {
+    width: 16px;
+  }
+}
+
+@media only screen and (max-width: $layout-breakpoint) {
+  #side-profile {
+    display: none;
+  }
+}

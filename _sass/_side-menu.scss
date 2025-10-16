@@ -1,0 +1,56 @@
+@use "common" as *;
+
+#side-menu__checkbox {
+  display: none;
+}
+
+#side-menu__overlay-hamburger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: #00000000;
+}
+
+#side-menu {
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  height: calc(100vh - $header-height);
+  width: 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: start;
+
+  transition: width 0.25s ease-in-out;
+  background: var(--background-color);
+  box-shadow: 23px 0px 20px -26px var(--shadow-color);
+
+  ul {
+    margin: 0;
+    padding: 1em 1em 0 1em;
+
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 1em;
+    list-style: none;
+  }
+}
+
+#side-menu__checkbox:checked + #side-menu__overlay-hamburger + #side-menu {
+  width: $hamburger-menu-width;
+}
+
+#side-menu__checkbox:checked + #side-menu__overlay-hamburger {
+  width: 100vh;
+}
+
+@media only screen and (min-width: $layout-breakpoint) {
+  #side-menu {
+    display: none;
+  }
+}

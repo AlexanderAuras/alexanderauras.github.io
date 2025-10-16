@@ -1,0 +1,39 @@
+<header>
+  <label for="side-menu__checkbox" id="header__hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav>
+    <ul>
+      {% for entry in site.nav-items %}
+      <li class="nav-item {% if page.title == entry.label or (entry.default and page.title == null) %}nav-item--active{% endif %}"><a href="{{ entry.url }}">{{ entry.label | replace: " ", "&nbsp;" }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div id="header__profile">
+    <div id="header__profile-content">
+      <span id="header__author-name">{{ site.author | replace: " ", "&nbsp;"}}</span>
+      <img id="header__author-image" src="{{ site.author-image | relative_url }}"/>
+    </div>
+    <ul id="header__links">
+      {% for link in site.author-links %}
+      <li class="header__links-item">
+          {% if link.icon %}
+          <img class="header__link-icon {% if link.invertible-icon %}invertible-icon{% endif %}" src="{{ link.icon | relative_url }}" />
+          {% else %}
+          <div class="header__link-icon"></div>
+          {% endif %}
+          {% if link.url %}
+          <a href="{{ link.url }}" target="_blank">{{ link.label | replace: " ", "&nbsp;" }}</a>
+          {% else %}
+          {{ link.label }}
+          {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</header>

@@ -1,0 +1,4 @@
+[data-theme="dark"] .invertible-icon {
+  background: #00000000;
+  filter: invert(100%) saturate(100%) hue-rotate(180deg);
+}
